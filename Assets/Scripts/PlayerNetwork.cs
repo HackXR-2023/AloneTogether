@@ -9,12 +9,13 @@ public class PlayerNetwork : NetworkBehaviour
 
     private void Awake()
     {
-        if (!IsOwner)
+        if (IsOwner)
         {
             foreach (Component component in componentsToDelete)
             {
                 Destroy(component);
             }
+            Destroy(this);
         }
     }
 }
