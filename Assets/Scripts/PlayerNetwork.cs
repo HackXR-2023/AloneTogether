@@ -5,17 +5,24 @@ using UnityEngine;
 
 public class PlayerNetwork : NetworkBehaviour
 {
-    public Component[] componentsToDelete;
+    public Behaviour[] behaviourToDisable;
 
-    private void Awake()
+    private void Update()
     {
-        if (IsOwner)
+        if (!IsOwner)
         {
-            foreach (Component component in componentsToDelete)
+            foreach (Behaviour behaviour in behaviourToDisable)
             {
-                Destroy(component);
+                behaviour.enabled = false;
             }
-            Destroy(this);
+        }
+        else
+        {
+            foreach (Behaviour behaviour in behaviourToDisable)
+            {
+                behaviour.enabled = true;
+            }
         }
     }
+
 }
