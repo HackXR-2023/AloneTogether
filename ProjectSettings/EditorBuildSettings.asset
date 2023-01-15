@@ -9,8 +9,9 @@ EditorBuildSettings:
     path: Assets/AloneTogether/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Oculus/VR/Scenes/HandTest.unity
+    path: Assets/AloneTogether/Scenes/AloneTogether.unity
     guid: b9a31e08066d6e343a208d34ec298f09
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 585dcfaef05d74c63aca54b3432cb506, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: eb31fd475b6094caba42492fa6e14b99, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: fd33f7926aa4d42faaf3d1113767f59f, type: 2}
