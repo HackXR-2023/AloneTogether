@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
             if (secondsLeft == 234) {
                nature.SetActive(true);
                factory.SetActive(false);
+               Vector3 t = hugger.transform.position;
+               t.y += 2;
+               hugger.transform.position = t;
                if (!isFriend)
                {
                   Instantiate(friend, hugger.transform.position, Quaternion.identity);
