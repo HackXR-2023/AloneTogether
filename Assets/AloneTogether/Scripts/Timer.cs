@@ -54,6 +54,11 @@ public class Timer : MonoBehaviour
         return elapsedTime;
     }
 
+    public int GetSecondsLeft()
+    {
+       return (int)(secondsToCount - elapsedTime);
+    }
+
     public string GetTimeLeft()
     {
         int secondsLeft = (int)(secondsToCount - elapsedTime);

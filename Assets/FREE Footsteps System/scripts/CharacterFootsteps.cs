@@ -61,7 +61,7 @@ namespace Footsteps {
 		float lastPlayTime;
 		bool previouslyGrounded;
 		bool isGrounded;
-
+  
 
 		void Start() {
 			if(groundLayers.value == 0) {
@@ -81,15 +81,20 @@ namespace Footsteps {
 				enabled = false;
 			}
 		}
-
+        Vector3 lastTransform;
 		void Update() {
-			CheckGround();
+			CheckGround(); //jumping
 
 			if(triggeredBy == TriggeredBy.TRAVELED_DISTANCE) {
 				float speed = (characterController ? characterController.velocity : characterRigidbody.velocity).magnitude;
 
-				if(isGrounded) {
+				if(true) {
 					// Advance the step cycle only if the character is grounded.
+					Vector3 diff = lastTransform - characterController.transform.localPosition;
+
+					lastTransform = characterController.transform.localPosition;
+
+					speed = Mathf.Abs(diff.x) + Mathf.Abs(diff.y) + Mathf.Abs(diff.z);
 					AdvanceStepCycle(speed * Time.deltaTime);
 				}
 			}
@@ -115,7 +120,7 @@ namespace Footsteps {
 		}
 
 		void PlayFootstep() {
-			AudioClip randomFootstep = SurfaceManager.singleton.GetFootstep(currentGroundInfo.collider, currentGroundInfo.point);
+			AudioClip randomFootstep = Resources.Load("footstep_concrete_2") as AudioClip;
 			float randomVolume = Random.Range(minVolume, maxVolume);
 
 			if(randomFootstep) {

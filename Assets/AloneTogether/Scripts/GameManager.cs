@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     {
         Timer.Instance.StartTime(300, GameOver);
         clock = GetComponentInChildren<TextMeshProUGUI>();
+        
     }
 
     // Update is called once per frame
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
         if (!gameOver)
         {
             clock.text = Timer.Instance.GetTimeLeft();
+            int secondsLeft = Timer.Instance.GetSecondsLeft();
+            if (secondsLeft == 220) {
+                
+            }
         }
     }
 
