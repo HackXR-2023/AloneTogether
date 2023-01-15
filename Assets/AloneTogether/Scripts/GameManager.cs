@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject friend;
     public GameObject nature;
     public GameObject factory;
+    public GameObject hugger;
+    bool isFriend = false;
     void Start()
     {
         Timer.Instance.StartTime(300, GameOver);
@@ -26,10 +28,15 @@ public class GameManager : MonoBehaviour
         {
             clock.text = Timer.Instance.GetTimeLeft();
             int secondsLeft = Timer.Instance.GetSecondsLeft();
-            if (secondsLeft == 220) {
-               friend.SetActive(true);
+            if (secondsLeft == 234) {
                nature.SetActive(true);
                factory.SetActive(false);
+               if (!isFriend)
+               {
+                  Instantiate(friend, hugger.transform.position, Quaternion.identity);
+                  isFriend = true;
+               }
+              
             }
         }
     }
