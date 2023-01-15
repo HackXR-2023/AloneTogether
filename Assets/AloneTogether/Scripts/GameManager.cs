@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI clock;
     private bool gameOver = false;
     //Our program main
+
+    public GameObject friend;
+    public GameObject nature;
+    public GameObject factory;
     void Start()
     {
         Timer.Instance.StartTime(300, GameOver);
@@ -23,7 +27,9 @@ public class GameManager : MonoBehaviour
             clock.text = Timer.Instance.GetTimeLeft();
             int secondsLeft = Timer.Instance.GetSecondsLeft();
             if (secondsLeft == 220) {
-                
+               friend.SetActive(true);
+               nature.SetActive(true);
+               factory.SetActive(false);
             }
         }
     }
