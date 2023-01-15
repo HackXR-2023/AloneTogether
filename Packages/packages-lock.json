@@ -1,14 +1,5 @@
 {
   "dependencies": {
-    "com.meta.movement": {
-      "version": "https://github.com/oculus-samples/Unity-Movement.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.textmeshpro": "3.0.6"
-      },
-      "hash": "ab01930f23c9a8fb3acc90689eaa413a421c7dd3"
-    },
     "com.normalvr.normcore": {
       "version": "2.4.1",
       "depth": 0,
