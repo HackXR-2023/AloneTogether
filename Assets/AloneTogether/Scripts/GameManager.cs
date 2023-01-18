@@ -28,18 +28,17 @@ public class GameManager : MonoBehaviour
         {
             clock.text = Timer.Instance.GetTimeLeft();
             int secondsLeft = Timer.Instance.GetSecondsLeft();
-            if (secondsLeft == 234) {
+            if (secondsLeft == 254) {
                nature.SetActive(true);
                factory.SetActive(false);
-               Vector3 t = hugger.transform.position;
-               t.y += 2;
-               hugger.transform.position = t;
                if (!isFriend)
                {
                   Instantiate(friend, hugger.transform.position, Quaternion.identity);
                   isFriend = true;
                }
-              
+                Vector3 t = hugger.transform.position;
+                t.y += 4;
+                hugger.transform.position = t;
             }
         }
     }
